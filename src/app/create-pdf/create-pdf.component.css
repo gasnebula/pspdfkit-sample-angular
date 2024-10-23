@@ -1,0 +1,48 @@
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  #assign-button {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; 
+  }
+  
+  #assign-button:hover {
+    background-color: #0056b3; 
+  }
+
+  .PSPDFKit-Text-Markup-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Rectangle-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Ellipse-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Polygon-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Polyline-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Line-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Ink-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Text-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Note-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Image-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Stamp-Annotation-Toolbar-Button-Delete {
+	display: none !important;
+}
+  

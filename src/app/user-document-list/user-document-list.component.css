@@ -1,0 +1,33 @@
+/* Structure */
+table {
+    width: 100%;
+  }
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+.hyperlink{
+  cursor: pointer;
+  color: blue;
+}
+.primary{
+  float: right;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+.primary:hover {
+  background-color: #0056b3;
+}
+
+.primary:disabled {
+  background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+  color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+  border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+}
+

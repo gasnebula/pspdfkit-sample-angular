@@ -1,0 +1,22 @@
+.signer-item {
+  width: 110px;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: grab;
+  height: 15px;
+  font-size: 14px;
+  vertical-align: middle;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* .signer-item:hover {
+    background-color: #e9ecef;
+  } */
+  

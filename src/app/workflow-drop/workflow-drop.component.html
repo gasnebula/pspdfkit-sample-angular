@@ -1,0 +1,18 @@
+<div class="app" style="display: flex;"></div>
+	<div style="float: left;width: 10%;">
+		<button (click)="addStudentName()" class="primary"  style="width: 150px;margin-top: 10px;">Student Name</button>
+		<button (click)="addStudentNumber()" class="primary" style="width: 150px;margin-top: 10px;">Student Number</button>
+		<button (click)="addStudentAddress()" class="primary" style="width: 150px;margin-top: 10px;">Student Address</button>
+		<!-- <button (click)="addStudentSign()" class="primary"  style="width: 150px;margin-top: 10px;">Student Sign</button> -->
+		<!-- <button (click)="submitDocument()" class="primary" style="width: 150px;margin-top: 10px;">Submit</button> -->
+    <div class="button-container">
+      <app-signer-list [currentSigneeEmail]="'gasolanki120@gmail.com'"></app-signer-list>
+    </div>
+	</div>
+  
+	<div style="float: right;width: 90%;">
+		<button (click)="downloadPdf()" class="primary" style="float: right;">Assign Document</button>
+<div #dropZone class="drop-zone" style="width: 90%; height: 90vh;margin-top:27px;margin-left: 50px;float: right;">
+    <!-- <h3>Drop Signer Here</h3> -->
+  </div>
+  

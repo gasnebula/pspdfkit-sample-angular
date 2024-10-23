@@ -1,0 +1,7 @@
+<div class="pdf-manager">
+    <div class="sidebar" [ngClass]="{'open': sidebarOpen}">
+      <button (click)="onAssignClick()" class="sidebar-action-btn" style="margin-top: 85px;">Assign</button>
+      <button (click)="onViewClick()">View</button>
+    </div>
+    <button class="menu-button" (click)="toggleSidebar()">Menu</button>
+</div>

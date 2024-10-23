@@ -1,0 +1,59 @@
+<div class="container">
+    <!-- Sidebar for User Selection and Options -->
+    <div class="sidebar">
+      <h3>User</h3>
+      <select (change)="onUserChange($event)">
+        <option *ngFor="let user of allUsers" [value]="user.id">{{ user.name }}</option>
+      </select>
+  
+      <div>
+        <button (click)="downloadsignPdf()" class="primary" style="float: right;">Download Document</button> 
+        <h3>Signers</h3>
+        <!-- <ul>
+          <li *ngFor="let user of allUsers" (click)="onSigneeChange(user)">
+            {{ user.name }}
+          </li>
+        </ul> -->
+        <select (change)="onSigneeChange($event)">
+            <option *ngFor="let user of allUsers" [value]="user.id">{{ user.name }}</option>
+          </select>
+        <button (click)="addUser()">+ Add New</button>
+        <h3>Add Fields</h3>
+        <!-- <div class="draggable-item" draggable="true" (dragstart)="onDragStart($event, 'signature')">Signature</div>
+        <div class="draggable-item" draggable="true" (dragstart)="onDragStart($event, 'initial')">Initial</div>
+        <div class="draggable-item" draggable="true" (dragstart)="onDragStart($event, 'date')">Date</div> -->
+        <div class="draggable-item" draggable="true" (dragstart)="onDragStart($event, 'signature')">
+          <span style="border: 1px solid rgb(215, 220, 228); border-radius: 5px; margin-inline-end: 8px; padding: 5px 3px; background-color: rgb(141, 184, 255);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="0.75rem" height="0.75rem" aria-hidden="true" focusable="false" data-qa="tab-palette-item-icon">
+            <path d="M22 21v1H3v-1zM20.7 4.72a3 3 0 0 1-.58 3.4L8.66 19.59 3 21l1.41-5.66L15.88 3.88A3 3 0 0 1 18 3a3 3 0 0 1 1.28.3L20.59 2 22 3.41zM10.46 15.1 8.9 13.54l-2.77 2.77-.52 2.08 2.08-.52zM19.1 6a1.1 1.1 0 0 0-1.88-.78L9.54 12.9l1.56 1.56 7.68-7.68A1.1 1.1 0 0 0 19.1 6z"></path>
+          </svg>
+        </span>
+          Signature
+        </div>
+        
+        <div class="draggable-item" draggable="true" (dragstart)="onDragStart($event, 'initial')">
+          <span style="border: 1px solid rgb(215, 220, 228); border-radius: 5px; margin-inline-end: 8px; padding: 5px 3px; background-color: rgb(141, 184, 255);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="0.75rem" height="0.75rem" aria-hidden="true" focusable="false" data-qa="tab-palette-item-icon">
+              <path d="M0 14h16v2H0v-2zM3.72.74c.79 0 1.42.13 1.91.39s.86.62 1.13 1.1c.26.48.44 1.05.54 1.73.09.67.14 1.42.14 2.25 0 .99-.06 1.85-.18 2.58s-.33 1.33-.62 1.81c-.29.47-.69.83-1.18 1.06-.5.22-1.13.34-1.88.34H0V.74h3.72zm-.44 9.59c.4 0 .72-.07.96-.21.24-.14.43-.36.58-.68.14-.31.23-.73.28-1.24.05-.51.07-1.16.07-1.92 0-.64-.02-1.2-.06-1.69-.04-.49-.13-.89-.26-1.21-.13-.32-.33-.56-.59-.72-.26-.16-.6-.24-1.03-.24h-.96v7.91h1.01zm7.5-1.52c0 .26.02.5.06.72.04.22.12.4.24.54.12.15.27.26.46.35.19.08.44.13.73.13.35 0 .66-.11.94-.34.28-.23.42-.58.42-1.05 0-.25-.03-.47-.1-.65a1.35 1.35 0 0 0-.34-.5c-.16-.15-.37-.28-.62-.4a7.91 7.91 0 0 0-.95-.37c-.5-.17-.94-.35-1.31-.55-.37-.2-.68-.43-.92-.7-.25-.28-.43-.59-.55-.94-.11-.35-.17-.76-.17-1.22 0-1.11.31-1.94.93-2.49.62-.55 1.47-.82 2.55-.82.5 0 .97.05 1.39.17.42.12.79.29 1.1.54.31.25.55.56.73.95.17.38.26.84.26 1.38v.32h-2.17c0-.54-.09-.95-.28-1.24-.19-.29-.5-.43-.95-.43-.25 0-.46.04-.63.11a1.011 1.011 0 0 0-.61.71c-.04.16-.06.32-.06.49 0 .35.07.64.22.87.15.24.46.45.95.65l1.75.76c.43.19.78.39 1.06.59.27.21.49.43.65.66.16.24.28.5.34.78.07.27.1.59.1.93 0 1.19-.34 2.05-1.03 2.59s-1.65.81-2.88.81c-1.28 0-2.2-.28-2.75-.84-.55-.56-.83-1.36-.83-2.4v-.44h2.27v.33z"></path>
+            </svg>
+          </span>
+          Initial
+        </div>
+        
+        <div class="draggable-item" draggable="true" (dragstart)="onDragStart($event, 'date')">
+          <span style="border: 1px solid rgb(215, 220, 228); border-radius: 5px; margin-inline-end: 8px; padding: 5px 3px; background-color: rgb(141, 184, 255);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="0.75rem" height="0.75rem" aria-hidden="true" focusable="false" data-qa="tab-palette-item-icon">
+              <path d="M20 3h-3V2h-1v1H8V2H7v1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 16H5V5h2v1h1V5h8v1h1V5h2zM13 8v9h-2v-7H9V9l2-1z"></path>
+            </svg>
+          </span>          
+          Date
+        </div>
+        
+      </div>
+    </div>
+  
+    <!-- PSPDFKit Container for PDF View -->
+    <div #container class="pdf-container">
+    </div>
+</div>
+

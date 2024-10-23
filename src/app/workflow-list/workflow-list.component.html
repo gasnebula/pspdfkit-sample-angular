@@ -1,0 +1,26 @@
+<!-- <div *ngFor="let signer of signers" 
+     class="signer-item" 
+     draggable="true" 
+     (dragstart)="onDragStart($event, signer.id)">
+  {{ signer.name }}
+</div> -->
+
+  <div 
+     class="signer-item" 
+     draggable="true" 
+     (dragstart)="onDragStart($event, 'initial')">
+   Stu. Sign Initial
+  </div>
+  <div 
+     class="signer-item" 
+     draggable="true" 
+     (dragstart)="onDragStart($event, 'signature')">
+   Stu. Sign
+  </div>
+
+  <div 
+     class="signer-item" 
+     draggable="true" 
+     (dragstart)="onDragStart($event, 'date')">
+   Stu. Sign Date
+  </div>

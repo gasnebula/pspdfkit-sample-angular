@@ -1,0 +1,45 @@
+.autocomplete-dropdown {
+    position: absolute;
+    /* Ensure it can be positioned freely */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* Ensure the dropdown appears above other elements */
+    max-height: 200px;
+    /* Set a max height if there are many suggestions */
+    overflow-y: auto;
+    /* Enable scrolling if dropdown content exceeds max height */
+    width: 300px;
+    /* Set width of the dropdown */
+}
+
+.autocomplete-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.autocomplete-dropdown li:hover {
+    background: #f0f0f0;
+}
+.primary{
+    float: right;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+.primary:hover {
+    background-color: #0056b3;
+  }
+
+  .primary:disabled {
+    background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+    color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+    border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+}

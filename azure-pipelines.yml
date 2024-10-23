@@ -1,0 +1,33 @@
+
+trigger:
+- Release_Dev
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  displayName: 'Install Node Js Version 20'
+  inputs:
+    versionSpec: 20.x
+- task: Npm@1
+  displayName: 'Install Wrangler'
+  inputs:
+    command: custom
+    verbose: true
+    customCommand: 'i -g wrangler'
+
+- script: |
+    npm install -g @angular/cli
+    npm install
+    ng build --c=production
+  displayName: 'npm install and build'
+
+- powershell: 'Remove-Item -Path "dist/esigncenter/browser/assets/pspdfkit-lib" -Recurse -Force'
+  displayName: 'Remove Assets PSPDFKIT Library'
+
+- powershell: 'npx wrangler pages deploy dist/esigncenter/browser  --project-name=esign-dev --branch=main'
+  displayName: 'Publish to cloudflare'
+  env:
+    CLOUDFLARE_API_TOKEN: $(CLOUDFLARE_API_TOKEN)
+

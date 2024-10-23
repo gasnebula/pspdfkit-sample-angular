@@ -1,0 +1,14 @@
+<div class="app" style="display: flex;height: 90vh;">
+	
+	<div style="width: 100%;">
+
+		<button (click)="downloadPdf()" class="primary" style="float: right;">Download Document</button> 
+		 <button (click)="submitDocument()" *ngIf="this.studentDocumentData?.studentSignCompleted == false" class="primary" style="float: right;">Submit Document</button> 
+		<div id="pspdfkit-container" style="width: 90%; height: 90vh;margin-top:50px;margin-left: 50px;float: right;">
+		</div>
+		<ul id="autocomplete-dropdown" class="autocomplete-dropdown" style="display: none;"></ul>
+    
+
+	</div>
+	<!-- We'll mount the PSPDFKit UI to this element. -->
+</div>

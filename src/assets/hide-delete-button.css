@@ -1,0 +1,13 @@
+.PSPDFKit-Text-Markup-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Rectangle-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Ellipse-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Polygon-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Polyline-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Line-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Ink-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Text-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Note-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Image-Annotation-Toolbar-Button-Delete,
+.PSPDFKit-Stamp-Annotation-Toolbar-Button-Delete {
+	display: none !important;
+}
